@@ -1,0 +1,105 @@
+.container-custom {
+  max-width: 100rem;
+  margin: 0 auto;
+  position: relative;
+}
+.skew {
+  transform: skewX(-20deg) rotate(-5deg);
+  background: $color-background-gray-light;
+  margin-top: 8rem;
+  max-height: 8rem;
+}
+#main-form {
+  min-height: 20rem;
+  margin-top: 20rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#create-new,
+#find-my-ship {
+  background: $color-background-gray-light;
+  padding: 5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 45rem;
+}
+
+#create-new {
+  -webkit-box-shadow: 5px 5px 0px -3px $color-primary-4-rgb;
+  -moz-box-shadow: 5px 5px 0px -3px $color-primary-4-rgb;
+  box-shadow: 5px 5px 0px -3px $color-primary-4-rgb;
+}
+#find-my-ship {
+  -webkit-box-shadow: 5px 5px 0px -3px $color-primary-1-rgb;
+  -moz-box-shadow: 5px 5px 0px -3px $color-primary-1-rgb;
+  box-shadow: 5px 5px 0px -3px $color-primary-1-rgb;
+}
+#btn-new-ship,
+#btn-find-ship {
+  background: $color-white;
+  padding: 1.5rem 3rem;
+  position: relative;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  transition: all 0.7s;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.7s;
+    transform: rotateX(90deg);
+    z-index: -1;
+    border-radius: 0.2rem;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.7s;
+    transform: rotateY(90deg);
+    z-index: -1;
+    border-radius: 0.2rem;
+  }
+  &:hover::before {
+    transform: rotateX(0deg);
+  }
+  &:hover::after {
+    transform: rotateY(0deg);
+  }
+}
+#btn-new-ship {
+  border: 0.2rem solid $color-primary-4;
+  &::before {
+    background: $color-primary-2;
+  }
+  &::after {
+    background: $color-primary-2;
+  }
+  &:hover {
+    color: $color-primary-5 !important;
+    border: 0.2rem solid $color-primary-5;
+  }
+}
+#btn-find-ship {
+  border: 0.2rem solid $color-primary-1;
+  &::before {
+    background: $color-primary-5;
+  }
+  &::after {
+    background: $color-primary-5;
+  }
+  &:hover {
+    color: $color-primary-3 !important;
+    border: 0.2rem solid $color-primary-3;
+  }
+}
