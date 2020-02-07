@@ -2,7 +2,9 @@
   <div class="container-custom">
     <div>
       <div class="skew">
-        <h1>Welcome to MineX!</h1>
+        <div class="title">
+          <h1>Welcome to</h1> <img src="/img/logo.png" alt="Logo">
+        </div>
       </div>
       <div id="main-form">
         <div id="create-new">
@@ -14,15 +16,68 @@
           <a href="/" id="btn-find-ship" class="primary-btn">Find Your Ship!</a>
         </div>
       </div>
+      <div id="game-description">
+        <p>In MineX, players operate a galactic mining company. They are tasked with gathering precious metals from
+          distant
+          asteroids. After each trip, the ores can be sold to buy additional and better rocket ships. These new ships
+          will allow access to better ores and greater wealth!</p>
+      </div>
 
-      {{!-- <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul> --}}
+      <div id="myNewModal" class="my-modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="new-ship-form">
+            <div class="input-row">
+              <div class="input-col">
+                <label for="firstName">First Name: </label>
+                <input type="text" name="firstName" placeholder="First Name" required>
+              </div>
+              <div class="input-col">
+                <label for="lastName">Last Name: </label>
+                <input type="text" name="lastName" placeholder="Last Name" required>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-col">
+                <label for="username">Username: </label>
+                <input type="text" name="username" placeholder="Username" required>
+              </div>
+              <div class="input-col">
+                <label for="password">Password: </label>
+                <input type="password" name="password" placeholder="Password" required>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-col">
+                <label for="email">Email: </label>
+                <input type="email" name="email" placeholder="Email" required>
+              </div>
+            </div>
+            <input type="submit" class="submit">
+          </form>
+        </div>
+
+      </div>
+
+      <div id="myFindModal" class="my-modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="find-ship-form">
+            <div class="input-row">
+              <label for="username">Username: </label>
+              <input type="text" name="username" placeholder="Username" required>
+              <label for="password">Password: </label>
+              <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <input type="submit" class="submit">
+          </form>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
