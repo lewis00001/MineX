@@ -12,7 +12,6 @@ a {
     color: $color-primary-1;
   }
 }
-
 #btn-new-ship {
   color: $color-primary-4;
 
@@ -27,7 +26,6 @@ a {
     color: $color-primary-1;
   }
 }
-
 h1 {
   font-size: 8.5rem;
   font-family: "Nunito", sans-serif;
@@ -35,8 +33,8 @@ h1 {
   display: inline-block;
   background-image: linear-gradient(
     290deg,
-    $color-primary-3 0%,
-    $color-primary-2 60%
+    $color-primary-1 0%,
+    $color-primary-4 60%
   );
   -webkit-background-clip: text;
   color: transparent;
@@ -49,4 +47,21 @@ h1 {
 }
 h2 {
   font-size: 3.5rem;
+}
+input {
+  font-size: 1.5rem;
+  color: $color-primary-3;
+}
+label {
+  font-size: 2rem;
+  color: $color-primary-3;
+}
+#create-new h2 {
+  color: $color-primary-4;
+}
+#find-my-ship h2 {
+  color: $color-primary-1;
+}
+#game-description {
+  font-size: 1.8rem;
 }

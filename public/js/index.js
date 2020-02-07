@@ -97,3 +97,59 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+// Get the modal
+var modalNew = document.getElementById("myNewModal");
+
+// Get the button that opens the modal
+var btnNew = document.getElementById("btn-new-ship");
+
+// Get the <span> element that closes the modal
+var spanOne = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btnNew.onclick = function(e) {
+  e.preventDefault();
+  console.log("Button Pressed");
+  modalNew.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+spanOne.onclick = function() {
+  modalNew.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target === modalNew) {
+    modalNew.style.display = "none";
+  }
+};
+
+// Get the modal
+var modalFind = document.getElementById("myFindModal");
+
+// Get the button that opens the modal
+var btnFind = document.getElementById("btn-find-ship");
+
+// When the user clicks on the button, open the modal
+btnFind.onclick = function(e) {
+  e.preventDefault();
+  console.log("Button Pressed");
+  modalFind.style.display = "block";
+};
+
+// Get the <span> element that closes the modal
+var spanTwo = document.getElementsByClassName("close")[1];
+
+// When the user clicks on <span> (x), close the modal
+spanTwo.onclick = function() {
+  modalFind.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target === modalFind) {
+    modalFind.style.display = "none";
+  }
+};

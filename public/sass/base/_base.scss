@@ -4,14 +4,22 @@ $color-primary-3: #ffda1f;
 $color-primary-4: #ab5bd6;
 $color-primary-5: #3e3a71;
 
+$color-primary-1-light: #3bffe2;
+$color-primary-4-light: #bd84db;
+$color-primary-3-light: #ffe76f;
+
 $color-primary-1-rgb: rgba(24, 188, 160, 1);
 $color-primary-2-rgb: rgba(2, 140, 198, 1);
 $color-primary-3-rgb: rgba(255, 218, 31, 1);
 $color-primary-4-rgb: rgba(170, 91, 214, 1);
 $color-primary-5-rgb: rgba(61, 58, 112, 1);
 
+$color-primary-1-rgb-light: rgba(24, 188, 160, 0.4);
+$color-primary-4-rgb-light: rgba(170, 91, 214, 0.4);
+
 $color-background-gray: #262626;
 $color-background-gray-light: #464646;
+$color-background-gray-dark: #272727;
 
 $color-white: #fff;
 
@@ -30,8 +38,33 @@ html {
 body {
   background: $color-background-gray;
   color: $color-white;
+  height: 100%;
+  width: 100%;
 }
-
-.list-group-item {
-  line-height: 2.5;
+form {
+  margin: 2rem 0;
+  & .submit {
+    float: right;
+    margin-right: 5rem;
+    background: $color-primary-3;
+    color: $color-background-gray;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.5s;
+    &:hover {
+      cursor: pointer;
+      background: $color-primary-3-light;
+      color: $color-background-gray-dark;
+    }
+  }
+}
+input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: $color-background-gray;
+  min-width: 15rem;
+  &:focus {
+    outline: none;
+  }
 }
