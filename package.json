@@ -11,11 +11,9 @@
   },
   "license": "ISC",
   "dependencies": {
-    "cli-table2": "^0.2.0",
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",
-    "inquirer": "^7.0.4",
     "mysql": "^2.18.1",
     "mysql2": "^1.6.5",
     "node": "^13.7.0",
