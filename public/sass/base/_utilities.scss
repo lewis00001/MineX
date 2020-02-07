@@ -9,9 +9,15 @@
   margin-top: 8rem;
   max-height: 8rem;
 }
+.title {
+  display: flex;
+  & img {
+    margin-left: -1.5rem;
+  }
+}
 #main-form {
   min-height: 20rem;
-  margin-top: 20rem;
+  margin-top: 10rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -26,7 +32,12 @@
   align-items: center;
   min-width: 45rem;
 }
-
+#game-description {
+  background: $color-background-gray-light;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 5rem;
+}
 #create-new {
   -webkit-box-shadow: 5px 5px 0px -3px $color-primary-4-rgb;
   -moz-box-shadow: 5px 5px 0px -3px $color-primary-4-rgb;
@@ -80,26 +91,85 @@
 #btn-new-ship {
   border: 0.2rem solid $color-primary-4;
   &::before {
-    background: $color-primary-2;
+    background: $color-background-gray-light;
   }
   &::after {
-    background: $color-primary-2;
+    background: $color-background-gray-light;
   }
   &:hover {
-    color: $color-primary-5 !important;
-    border: 0.2rem solid $color-primary-5;
+    color: $color-primary-4-light !important;
+    border: 0.2rem solid $color-primary-4-light;
   }
 }
 #btn-find-ship {
   border: 0.2rem solid $color-primary-1;
   &::before {
-    background: $color-primary-5;
+    background: $color-background-gray-light;
   }
   &::after {
-    background: $color-primary-5;
+    background: $color-background-gray-light;
   }
   &:hover {
-    color: $color-primary-3 !important;
-    border: 0.2rem solid $color-primary-3;
+    color: $color-primary-1-light !important;
+    border: 0.2rem solid $color-primary-1-light;
   }
+}
+
+/* The Modal (background) */
+.my-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+#myFindModal {
+  background-color: $color-primary-1; /* Fallback color */
+  background-color: $color-primary-1-rgb-light; /* Black w/ opacity */
+}
+#myNewModal {
+  background-color: $color-primary-4; /* Fallback color */
+  background-color: $color-primary-4-rgb-light; /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.modal-content {
+  background-color: $color-background-gray-light;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 75rem;
+  color: black;
+  position: relative;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: $color-primary-3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 1.5rem auto;
+}
+.input-col {
+  min-width: 28rem;
+  display: flex;
+  justify-content: space-between;
 }
