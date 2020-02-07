@@ -2,18 +2,18 @@
 
 INSERT INTO minerals (mineral_name, price)
 VALUES 
-("Galium", 285),
-("Germanium", 1920),  
-("Hafnium", 1484),
-("Idium", 286),
-("Neodymium", 62),
-("Palladium", 76711),
-("Platinum", 31186),
-("Praseodymium", 68),
-("Rhenium", 1630),
-("Rhodium", 344013), 
-("Terbium", 646),
-("Uranium", 53),
-("Gold", 52910),
-("Silver", 631),
-("Diamond", 1300);
+("Galium", 300),
+("Germanium", 2000),  
+("Hafnium", 1500),
+("Idium", 300),
+("Neodymium", 60),
+("Palladium", 80000),
+("Platinum", 31000),
+("Praseodymium", 70),
+("Rhenium", 2000),
+("Rhodium", 340000), 
+("Terbium", 650),
+("Uranium", 50),
+("Gold", 53000),
+("Silver", 650),
+("Diamond", 125000000);
