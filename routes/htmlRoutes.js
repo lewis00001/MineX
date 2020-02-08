@@ -13,11 +13,20 @@ module.exports = function(app) {
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.Example.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbExample) {
       res.render("example", {
         example: dbExample
       });
     });
+  });
+
+  // Load main game page
+  app.get("/MineX", function(req, res) {
+    res.render("MineX", { example: { id:3} });
   });
 
   // Render 404 page for any unmatched routes
