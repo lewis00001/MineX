@@ -18,10 +18,11 @@ $color-primary-1-rgb-light: rgba(24, 188, 160, 0.4);
 $color-primary-4-rgb-light: rgba(170, 91, 214, 0.4);
 
 $color-background-gray: #262626;
-$color-background-gray-light: #464646;
+$color-background-gray-light: #737373;
 $color-background-gray-dark: #272727;
 
 $color-white: #fff;
+$color-black: rgb(0, 0, 0);
 
 *,
 *::after,
@@ -36,11 +37,21 @@ html {
 }
 
 body {
-  background: $color-background-gray;
+  background: $color-black;
   color: $color-white;
-  height: 100%;
-  width: 100%;
+  // height: 100%;
+  // width: 100%;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 form {
   margin: 2rem 0;
   & .submit {
