@@ -142,4 +142,3 @@ window.onclick = function(event) {
     modalNew.style.display = "none";
   }
 };
-

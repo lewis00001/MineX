@@ -26,7 +26,7 @@ a {
     color: $color-primary-1;
   }
 }
-h1 {
+.title h1 {
   font-size: 8.5rem;
   font-family: "Nunito", sans-serif;
 
@@ -45,7 +45,8 @@ h1 {
   text-align: center;
   width: 100%;
 }
-h2 {
+#main-form h2 {
+  text-shadow: 1px 1px 3px $color-background-gray-dark;
   font-size: 3.5rem;
 }
 input {
@@ -63,5 +64,5 @@ label {
   color: $color-primary-1;
 }
 #game-description {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
 }
