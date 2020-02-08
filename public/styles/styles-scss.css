@@ -9,10 +9,17 @@ html {
   font-size: 10px; }
 
 body {
-  background: #262626;
+  background: black;
   color: #fff;
-  height: 100%;
-  width: 100%; }
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; }
 
 form {
   margin: 2rem 0; }
@@ -45,7 +52,7 @@ input {
 
 .skew {
   transform: skewX(-20deg) rotate(-5deg);
-  background: #464646;
+  background: #737373;
   margin-top: 8rem;
   max-height: 8rem; }
 
@@ -63,7 +70,7 @@ input {
 
 #create-new,
 #find-my-ship {
-  background: #464646;
+  background: #737373;
   padding: 5rem;
   border-radius: 0.5rem;
   display: flex;
@@ -72,7 +79,7 @@ input {
   min-width: 45rem; }
 
 #game-description {
-  background: #464646;
+  background: #737373;
   padding: 1.5rem;
   border-radius: 0.5rem;
   margin-top: 5rem; }
@@ -130,9 +137,9 @@ input {
 #btn-new-ship {
   border: 0.2rem solid #ab5bd6; }
   #btn-new-ship::before {
-    background: #464646; }
+    background: #737373; }
   #btn-new-ship::after {
-    background: #464646; }
+    background: #737373; }
   #btn-new-ship:hover {
     color: #bd84db !important;
     border: 0.2rem solid #bd84db; }
@@ -140,9 +147,9 @@ input {
 #btn-find-ship {
   border: 0.2rem solid #19bca0; }
   #btn-find-ship::before {
-    background: #464646; }
+    background: #737373; }
   #btn-find-ship::after {
-    background: #464646; }
+    background: #737373; }
   #btn-find-ship:hover {
     color: #3bffe2 !important;
     border: 0.2rem solid #3bffe2; }
@@ -178,7 +185,7 @@ input {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #464646;
+  background-color: #737373;
   margin: 15% auto;
   /* 15% from the top and centered */
   padding: 20px;
@@ -234,7 +241,7 @@ a {
   #btn-find-ship:hover {
     color: #19bca0; }
 
-h1 {
+.title h1 {
   font-size: 8.5rem;
   font-family: "Nunito", sans-serif;
   display: inline-block;
@@ -247,7 +254,8 @@ h1 {
   text-align: center;
   width: 100%; }
 
-h2 {
+#main-form h2 {
+  text-shadow: 1px 1px 3px #272727;
   font-size: 3.5rem; }
 
 input {
@@ -265,4 +273,4 @@ label {
   color: #19bca0; }
 
 #game-description {
-  font-size: 1.8rem; }
+  font-size: 2.2rem; }
