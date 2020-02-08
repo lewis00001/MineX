@@ -100,12 +100,15 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 // Get the modal
 var modalNew = document.getElementById("myNewModal");
+var modalFind = document.getElementById("myFindModal");
 
 // Get the button that opens the modal
 var btnNew = document.getElementById("btn-new-ship");
+var btnFind = document.getElementById("btn-find-ship");
 
 // Get the <span> element that closes the modal
 var spanOne = document.getElementsByClassName("close")[0];
+var spanTwo = document.getElementsByClassName("close")[1];
 
 // When the user clicks on the button, open the modal
 btnNew.onclick = function(e) {
@@ -114,24 +117,6 @@ btnNew.onclick = function(e) {
   modalNew.style.display = "block";
 };
 
-// When the user clicks on <span> (x), close the modal
-spanOne.onclick = function() {
-  modalNew.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target === modalNew) {
-    modalNew.style.display = "none";
-  }
-};
-
-// Get the modal
-var modalFind = document.getElementById("myFindModal");
-
-// Get the button that opens the modal
-var btnFind = document.getElementById("btn-find-ship");
-
 // When the user clicks on the button, open the modal
 btnFind.onclick = function(e) {
   e.preventDefault();
@@ -139,8 +124,10 @@ btnFind.onclick = function(e) {
   modalFind.style.display = "block";
 };
 
-// Get the <span> element that closes the modal
-var spanTwo = document.getElementsByClassName("close")[1];
+// When the user clicks on <span> (x), close the modal
+spanOne.onclick = function() {
+  modalNew.style.display = "none";
+};
 
 // When the user clicks on <span> (x), close the modal
 spanTwo.onclick = function() {
@@ -151,5 +138,8 @@ spanTwo.onclick = function() {
 window.onclick = function(event) {
   if (event.target === modalFind) {
     modalFind.style.display = "none";
+  } else if (event.target === modalNew) {
+    modalNew.style.display = "none";
   }
 };
+
