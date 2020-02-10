@@ -6,7 +6,7 @@
       Welcome to your command center.<br>
       We're standing by for orders.
     </div>
-    <div class="btn-gp-signout">Sign Out</div>
+    <div class="btn-gp-signout r-corner">Sign Out</div>
   </div>
   {{!-- head/body divider line --}}
   <div class="h-line"></div>
@@ -17,7 +17,9 @@
       <div class="rocket-title">
         Rockets
       </div>
-      <div class="rocket-options"></div>
+      <div class="rocket-options">
+        {{rocket-options}}
+      </div>
     </div>
 
     <div class="asteroid-div">
@@ -26,7 +28,7 @@
       </div>
 
       <div class="asteroids">
-
+        {{asteroid-options}}
       </div>
 
       <div class="inner">
@@ -34,34 +36,28 @@
         <div class="inner-dashboard">
           <div class="command-center">
             <div class="cmd-title">Command Center</div>
-            <div class="funding wire">
-              <div class="current-funds wire"></div>
-              <div class="ores wire"></div>
-            </div>
-            <div class="actions wire">
-              <div class="sell-ore wire"></div>
-              <div class="buy-ship wire"></div>
+            <div class="f-box flex">
+              <div class="funding">
+                <div class="current-funds r-corner">Current Funds: ${{currentFunds}}</div>
+                <div class="ores">Current Ore List: <br>
+                  {{currentOreList}}
+                </div>
+              </div>
+              <div class="actions r-corner">
+                <div class="sell-ore r-corner">Sell Ores</div>
+                <div class="buy-ship r-corner">Buy Ship</div>
+              </div>
             </div>
           </div>
+
         </div>
 
         <div class="stats">
           <div class="stats-center">
             <div class="stats-title">Stats</div>
-            {{!-- <div class="stats-details">
-              <div>ore</div>
-              <div>ore</div>
-              <div>ore</div>
-              <div>ore</div>
-              <div>ore</div>
-              <div>ore</div>
-              <div>ore</div>
-              <div>ore</div>
-              <div>ore</div>
-              <div>ore</div>
-              <div>ore</div>
-              <div>ore</div>
-            </div> --}}
+            <div class="stats-details">
+              {{stats-output}}
+            </div>
           </div>
         </div>
       </div>
