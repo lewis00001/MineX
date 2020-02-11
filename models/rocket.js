@@ -4,5 +4,14 @@ module.exports = function(sequelize, Sequelize) {
     storage: Sequelize.INTEGER,
     price: Sequelize.INTEGER
   });
+
+  Rocket.associate = function (models) {
+    Rocket.belongsToMany(models.users, {
+        as: 'users',
+        through: 'usersRocket',
+        foreignKey: 'rocketId'
+    });
+  };
+
   return Rocket;
 }
