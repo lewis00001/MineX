@@ -5,13 +5,13 @@ module.exports = function(sequelize, Sequelize) {
     price: Sequelize.INTEGER
   });
 
-  Rocket.associate = function (models) {
+  Rocket.associate = function(models) {
     Rocket.belongsToMany(models.users, {
-        as: 'users',
-        through: 'usersRocket',
-        foreignKey: 'rocketId'
+      as: "users",
+      through: "usersRocket",
+      foreignKey: "rocketId"
     });
   };
 
   return Rocket;
-}
+};

@@ -4,7 +4,7 @@
 var Sequelize = require("sequelize");
 
 // mySQL connection for userinfo_table
-var sequelize = new Sequelize("mineX", "root", "root password here", {
+var sequelize = new Sequelize("mineX", "root", "", {
   host: "localhost",
   port: 3306,
   dialect: "mysql",
