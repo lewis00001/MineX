@@ -17,9 +17,6 @@ module.exports = function(sequelize, DataTypes) {
         is: ["^[a-z]+$", "i"] //allow only letters
       }
     },
-    userName: {
-      type: DataTypes.STRING
-    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -47,9 +44,7 @@ module.exports = function(sequelize, DataTypes) {
   };
 
   User.associate = function(models) {
-    User.belongsToMany(models.rocket, {
-      as: "rocket",
-      through: "usersRocket",
+    User.hasOne(models.rocket, {
       foreignKey: "rocketId"
     });
     // User.belongsToMany(models.asteroid, {
