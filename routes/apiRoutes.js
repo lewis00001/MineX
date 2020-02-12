@@ -7,6 +7,22 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/find/:email/:password", function(req, res) {
+    console.log(req.params.email);
+    console.log(req.params.password);
+    db.userInfo
+      .findOne({
+        where: {
+          email: req.params.email,
+          password: req.params.password
+        }
+      })
+      .then(function(dbPost) {
+        console.log(dbPost.dataValues);
+        res.json(dbPost.dataValues);
+      });
+  });
+
   // POST route for saving a new post
   app.post("/api/new", function(req, res) {
     console.log(req.body);

@@ -46,10 +46,10 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
   var newShip = {
     firstName: $("#input-first-name").val(),
     lastName: $("#input-last-name").val(),
-    username: $("#input-username").val(),
     password: $("#input-password").val(),
     email: $("#input-email").val()
   };
+
   $.post("/api/new", newShip).then(function(data) {
     window.location.href = "/main/" + data.id;
   });
@@ -58,15 +58,15 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
 document.querySelector("#find-submit").addEventListener("click", function(e) {
   e.preventDefault();
   var findShip = {
-    username: $("#find-username").val(),
+    email: $("#find-email").val(),
     password: $("#find-password").val()
   };
-  getUsername(findShip.username);
+  getUserEmail(findShip.email, findShip.password);
 });
-function getUsername(username) {
-  var usernameString = username;
-  console.log(usernameString);
-  $.get("/api/find/" + usernameString, function(data) {
-    console.log("Data: " + data);
+function getUserEmail(email, password) {
+  var emailString = email;
+  var passwordString = password;
+  $.get("/api/find/" + emailString + "/" + passwordString, function(data) {
+    window.location.href = "/main/" + data.id;
   });
 }
