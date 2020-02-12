@@ -1,5 +1,6 @@
 -- source: kitco.com data Ask price USD/kg- strategic metals, minerals, precious metals
 
+
 INSERT INTO minerals
     (mineral_name, price, group)
 VALUES
