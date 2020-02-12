@@ -36,12 +36,18 @@ form {
       background: #ffe76f;
       color: #272727; }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
 input {
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: none;
   background: #262626;
   min-width: 15rem; }
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:hover:focus,
+  input:-webkit-autofill:focus:focus,
   input:focus {
     outline: none; }
 
@@ -271,6 +277,9 @@ a {
   text-shadow: 1px 1px 3px #272727;
   font-size: 3.5rem; }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
 input {
   font-size: 1.5rem;
   color: #ffda1f; }

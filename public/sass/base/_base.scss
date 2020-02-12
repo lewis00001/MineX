@@ -69,6 +69,9 @@ form {
     }
   }
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
 input {
   padding: 0.5rem;
   border-radius: 0.5rem;
