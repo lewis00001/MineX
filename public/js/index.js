@@ -60,7 +60,6 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
   if($("#input-password").val() !== $("#input-password-confirm").val()) {
     doPasswordsMatch = false;
   }
-  console.log(doPasswordsMatch);
 
   var newShip = {
     firstName: $("#input-first-name").val(),
@@ -71,7 +70,13 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
 
   if (isSet && doPasswordsMatch){
     $.post("/api/new", newShip).then(function(data) {
-      window.location.href = "/main/" + data.id;
+      // console.log(data);
+
+      if(data.id !== undefined){
+        window.location.href = "/main/" + data.id;
+      } else {
+        alert(data);
+      }
     });
   } else {
     alert("All fileds are required");
