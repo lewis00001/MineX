@@ -57,10 +57,6 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
   var isSet = isFormFilled(newShipForm);
   var doPasswordsMatch = true;
 
-  if($("#input-password").val() !== $("#input-password-confirm").val()) {
-    doPasswordsMatch = false;
-  }
-
   var newShip = {
     firstName: $("#input-first-name").val(),
     lastName: $("#input-last-name").val(),
@@ -68,7 +64,10 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
     email: $("#input-email").val()
   };
 
-  if (isSet && doPasswordsMatch){
+  if($("#input-password").val() !== $("#input-password-confirm").val()) {
+    doPasswordsMatch = false;
+    alert("The passwords do not match")
+  } else if (isSet && doPasswordsMatch){
     $.post("/api/new", newShip).then(function(data) {
       // console.log(data);
 
