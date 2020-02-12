@@ -4,7 +4,7 @@
   "description": "Project 2 Starter",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
     "compile:sass": "node-sass public/sass/main.scss public/styles/styles-scss.css -w"
@@ -19,6 +19,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^1.6.5",
     "node": "^13.7.0",
+    "nodemon": "^2.0.2",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6",
