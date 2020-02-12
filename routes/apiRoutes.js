@@ -18,7 +18,6 @@ module.exports = function(app) {
         }
       })
       .then(function(dbPost) {
-        console.log(dbPost.dataValues);
         res.json(dbPost.dataValues);
       });
   });
