@@ -1,6 +1,6 @@
-INSERT INTO rocket (rocket_name, fuel_capacity)
+INSERT INTO rocket (rocket_name, storage, price)
 VALUES 
-("Rocket 1", 1000), 
-("Rocket 2", 2000),
-("Rocket 3", 3000), 
-("Rocket 4", 4000);
+("Moon Dart", 4, 2000), 
+("Galactic Spike", 8, 8000),
+("Light Bender", 12, 20000), 
+("Star Hammer", 16, 150000);
