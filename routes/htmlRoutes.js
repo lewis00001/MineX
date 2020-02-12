@@ -20,6 +20,11 @@ module.exports = function(app) {
       });
   });
 
+  // Load main game page
+  app.get("/MineX", function(req, res) {
+    res.render("MineX", { example: { id:3} });
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
