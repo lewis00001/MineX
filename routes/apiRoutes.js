@@ -1,14 +1,5 @@
 var db = require("../models");
-
-// Validation
-var Joi = require('@hapi/joi');
-
-var schema = Joi.object({ 
-  firstName: Joi.string() .min(6) .required(),
-  lastName: Joi.string() .min(6) .required(),
-  email: Joi.string() .min(6) .required() .email(),
-  password: Joi.string() .min(6) .required() 
-});
+var { registerValidation } = require("../validation");
 
 module.exports = function(app) {
   // app.get("/api/all", function(req, res) {
@@ -34,9 +25,8 @@ module.exports = function(app) {
 
   // POST route for saving a new post
   app.post("/api/new", function(req, res) {
-    // Lets valid the data before a user
-    var { error } = schema.validate(req.body);
-    // console.log(error.details[0].message);
+
+    var {error} = registerValidation(req.body);
 
     if(error) {
       return res.json(error.details[0].message)
