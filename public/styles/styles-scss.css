@@ -45,6 +45,9 @@ input {
   input:focus {
     outline: none; }
 
+label {
+  margin-right: 1rem; }
+
 .container-custom {
   max-width: 100rem;
   margin: 0 auto;
@@ -93,6 +96,16 @@ input {
   -webkit-box-shadow: 5px 5px 0px -3px #18bca0;
   -moz-box-shadow: 5px 5px 0px -3px #18bca0;
   box-shadow: 5px 5px 0px -3px #18bca0; }
+
+#find-modal {
+  max-width: 50rem; }
+
+#find-ship-form .input-row {
+  display: flex;
+  justify-content: space-between;
+  /* width: 40%; */
+  max-width: 30rem;
+  margin: 1.5rem auto; }
 
 #btn-new-ship,
 #btn-find-ship {
@@ -190,7 +203,7 @@ input {
   /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  max-width: 75rem;
+  max-width: 65%;
   color: black;
   position: relative; }
 
@@ -216,7 +229,7 @@ input {
   margin: 1.5rem auto; }
 
 .input-col {
-  min-width: 28rem;
+  min-width: 30rem;
   display: flex;
   justify-content: space-between; }
 
