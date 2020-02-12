@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "mine_db",
+    "password": "",
+    "database": "mineX",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "",
     "database": "rocket_db",
     "host": "localhost",
     "dialect": "mysql",

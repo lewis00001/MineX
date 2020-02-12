@@ -113,14 +113,12 @@ var spanTwo = document.getElementsByClassName("close")[1];
 // When the user clicks on the button, open the modal
 btnNew.onclick = function(e) {
   e.preventDefault();
-  console.log("Button Pressed");
   modalNew.style.display = "block";
 };
 
 // When the user clicks on the button, open the modal
 btnFind.onclick = function(e) {
   e.preventDefault();
-  console.log("Button Pressed");
   modalFind.style.display = "block";
 };
 
@@ -142,3 +140,33 @@ window.onclick = function(event) {
     modalNew.style.display = "none";
   }
 };
+
+document.querySelector("#new-submit").addEventListener("click", function(e) {
+  e.preventDefault();
+  var newShip = {
+    firstName: $("#input-first-name").val(),
+    lastName: $("#input-last-name").val(),
+    username: $("#input-username").val(),
+    password: $("#input-password").val(),
+    email: $("#input-email").val()
+  };
+  $.post("/api/new", newShip).then(function(data) {
+    window.location.href = "/main/" + data.id;
+  });
+});
+
+document.querySelector("#find-submit").addEventListener("click", function(e) {
+  e.preventDefault();
+  var findShip = {
+    username: $("#find-username").val(),
+    password: $("#find-password").val()
+  };
+  getUsername(findShip.username);
+});
+function getUsername(username) {
+  var usernameString = username;
+  console.log(usernameString);
+  $.get("/api/find/" + usernameString, function(data) {
+    console.log("Data: " + data);
+  });
+}
