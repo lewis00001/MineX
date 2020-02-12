@@ -13,9 +13,6 @@ module.exports = function(sequelize, Sequelize) {
       lastName: {
         type: Sequelize.STRING
       },
-      username: {
-        type: Sequelize.STRING
-      },
       password: {
         type: Sequelize.STRING
       },
