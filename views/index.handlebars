@@ -41,12 +41,18 @@
             </div>
             <div class="input-row">
               <div class="input-col">
-                <label for="email">Email: </label>
-                <input type="email" name="email" id="input-email" placeholder="Email" required>
-              </div>
-              <div class="input-col">
                 <label for="password">Password: </label>
                 <input type="password" name="password" id="input-password" placeholder="Password" required>
+              </div>
+              <div class="input-col">
+                <label for="password2">Confirm Password: </label>
+                <input type="password" name="password2" id="input-password-confirm" placeholder="Password" required>
+              </div>
+            </div>
+                        <div class="input-row">
+              <div class="input-col">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="input-email" placeholder="Email" required>
               </div>
             </div>
             <input type="submit" class="submit" id="new-submit">
@@ -58,12 +64,20 @@
       <div id="myFindModal" class="my-modal">
 
         <!-- Modal content -->
-        <div class="modal-content">
+        <div class="modal-content" id="find-modal">
           <span class="close">&times;</span>
           <form id="find-ship-form">
+            {{!-- <div class="input-row">
+              <label for="email">Email: </label>
+              <input type="email" name="email" id="find-email" placeholder="Email" required>
+              <label for="password">Password: </label>
+              <input type="password" name="password" placeholder="Password" id="find-password" required>
+            </div> --}}
             <div class="input-row">
               <label for="email">Email: </label>
               <input type="email" name="email" id="find-email" placeholder="Email" required>
+            </div>
+            <div class="input-row">
               <label for="password">Password: </label>
               <input type="password" name="password" placeholder="Password" id="find-password" required>
             </div>
