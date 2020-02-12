@@ -18,14 +18,13 @@ module.exports = function(app) {
         }
       })
       .then(function(dbPost) {
-        console.log(dbPost.dataValues);
         res.json(dbPost.dataValues);
       });
   });
 
   // POST route for saving a new post
   app.post("/api/new", function(req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     db.userInfo
       .create({
         firstName: req.body.firstName,

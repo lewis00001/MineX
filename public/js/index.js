@@ -41,8 +41,27 @@ window.onclick = function(event) {
   }
 };
 
+function isFormFilled(checkThis){
+  var checkAllInput = true;
+  $(checkThis).each(function(){
+    if($(this).val() === "") {
+      checkAllInput = false;
+    }
+  })
+  return checkAllInput;
+}
+
 document.querySelector("#new-submit").addEventListener("click", function(e) {
   e.preventDefault();
+  var newShipForm = ".new-ship-input";
+  var isSet = isFormFilled(newShipForm);
+  var doPasswordsMatch = true;
+
+  if($("#input-password").val() !== $("#input-password-confirm").val()) {
+    doPasswordsMatch = false;
+  }
+  console.log(doPasswordsMatch);
+
   var newShip = {
     firstName: $("#input-first-name").val(),
     lastName: $("#input-last-name").val(),
@@ -50,18 +69,32 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
     email: $("#input-email").val()
   };
 
-  $.post("/api/new", newShip).then(function(data) {
-    window.location.href = "/main/" + data.id;
-  });
+  if (isSet && doPasswordsMatch){
+    $.post("/api/new", newShip).then(function(data) {
+      window.location.href = "/main/" + data.id;
+    });
+  } else {
+    alert("All fileds are required");
+  }
 });
 
 document.querySelector("#find-submit").addEventListener("click", function(e) {
   e.preventDefault();
+
+  var newShipForm = ".find-ship-input";
+  var isSet = isFormFilled(newShipForm);
+ 
+
   var findShip = {
     email: $("#find-email").val(),
     password: $("#find-password").val()
   };
-  getUserEmail(findShip.email, findShip.password);
+
+  if(isSet) {
+    getUserEmail(findShip.email, findShip.password);
+  } else {
+    alert("All fileds are required");
+  }
 });
 function getUserEmail(email, password) {
   var emailString = email;
