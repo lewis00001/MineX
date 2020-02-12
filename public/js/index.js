@@ -150,15 +150,23 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
     password: $("#input-password").val(),
     email: $("#input-email").val()
   };
-  console.log("Your pressed new ship button");
-  console.log(newShip);
+  $.post("/api/new", newShip).then(function(data) {
+    window.location.href = "/main/" + data.id;
+  });
 });
+
 document.querySelector("#find-submit").addEventListener("click", function(e) {
   e.preventDefault();
   var findShip = {
     username: $("#find-username").val(),
     password: $("#find-password").val()
   };
-  console.log("Your pressed find ship button");
-  console.log(findShip);
+  getUsername(findShip.username);
 });
+function getUsername(username) {
+  var usernameString = username;
+  console.log(usernameString);
+  $.get("/api/find/" + usernameString, function(data) {
+    console.log("Data: " + data);
+  });
+}
