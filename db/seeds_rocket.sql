@@ -1,4 +1,4 @@
-INSERT INTO rocket (rocket_name, storage, price)
+INSERT INTO rockets (rocket_name, storage, price)
 VALUES 
 ("Moon Dart", 4, 2000), 
 ("Galactic Spike", 8, 8000),

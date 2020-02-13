@@ -14,4 +14,5 @@ VALUES
 ("Platinum", 40000, 3),
 ("Palladium", 80000, 4),
 ("Rhodium", 340000, 4),
-("Diamond", 125000000, 5);
+("Diamond", 125000000, 4),
+("Blue Diamond", 250000000, 4);
