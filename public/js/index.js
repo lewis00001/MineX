@@ -57,6 +57,7 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
   var isSet = isFormFilled(newShipForm);
   var doPasswordsMatch = true;
 
+  // Capture input
   var newShip = {
     firstName: $("#input-first-name").val(),
     lastName: $("#input-last-name").val(),
@@ -64,21 +65,23 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
     email: $("#input-email").val()
   };
 
+  // Make sure passwords match
   if($("#input-password").val() !== $("#input-password-confirm").val()) {
     doPasswordsMatch = false;
     alert("The passwords do not match")
+    // Make sure all fields are filled and password match
   } else if (isSet && doPasswordsMatch){
     $.post("/api/new", newShip).then(function(data) {
-      // console.log(data);
-
+      // If we get a user id back redirect to game
       if(data.id !== undefined){
         window.location.href = "/main/" + data.id;
       } else {
+        // Report why a user was not created
         alert(data);
       }
     });
   } else {
-    alert("All fileds are required");
+    alert("All fields are required");
   }
 });
 
@@ -97,13 +100,17 @@ document.querySelector("#find-submit").addEventListener("click", function(e) {
   if(isSet) {
     getUserEmail(findShip.email, findShip.password);
   } else {
-    alert("All fileds are required");
+    alert("All fields are required");
   }
 });
 function getUserEmail(email, password) {
   var emailString = email;
   var passwordString = password;
   $.get("/api/find/" + emailString + "/" + passwordString, function(data) {
-    window.location.href = "/main/" + data.id;
+    if(data.id !== undefined){
+      window.location.href = "/main/" + data.id;
+    } else {
+      alert(data);
+    }
   });
 }
