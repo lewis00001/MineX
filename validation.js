@@ -3,8 +3,8 @@ var Joi = require('@hapi/joi');
 
 var registerValidation = function(data) {
     var schema = Joi.object({ 
-        firstName: Joi.string() .min(6) .required(),
-        lastName: Joi.string() .min(6) .required(),
+        firstName: Joi.string() .min(2) .required(),
+        lastName: Joi.string() .min(2) .required(),
         email: Joi.string() .min(6) .required() .email(),
         password: Joi.string() .min(6) .required() 
       });
