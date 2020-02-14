@@ -3,7 +3,7 @@
   <div class="gp-header">
     <img src="/img/logo.png" class="gp-logo" alt="Logo">
     <div class="pg-welcome">
-      Welcome to your command center.<br>
+      Welcome to your command center. {{firstName}} {{lastName}}<br>
       We're standing by for orders.
     </div>
     <div class="btn-gp-signout r-corner">Sign Out</div>
@@ -18,13 +18,13 @@
         Rockets
       </div>
       <div class="rocket-options">
-        <img src="/img/rocket/s1_rocket.png" alt="rocket 1">
+        <img src="/img/rocket/s1_rocket.png" alt="rocket 1" id="rocket_1" class="rocket">
         <hr>
-        <img src="/img/rocket/s2_rocket.png" alt="rocket 2" class="current-rocket">
+        <img src="/img/rocket/s2_rocket.png" alt="rocket 2" id="rocket_2" class="current-rocket rocket">
         <hr>
-        <img src="/img/rocket/s3_rocket.png" alt="rocket 3">
+        <img src="/img/rocket/s3_rocket.png" alt="rocket 3" id="rocket_3" class="rocket">
         <hr>
-        <img src="/img/rocket/s4_rocket.png" alt="rocket 4">
+        <img src="/img/rocket/s4_rocket.png" alt="rocket 4" id="rocket_4" class="rocket">
       </div>
     </div>
 
@@ -47,7 +47,7 @@
             <div class="cmd-title">Command Center</div>
             <div class="f-box flex">
               <div class="funding">
-                <div class="current-funds r-corner">Current Funds: ${{currentFunds}}</div>
+                <div class="current-funds r-corner">Current Funds: ${{funds}}</div>
                 <div class="ores">Current Ore List: <br>
                   {{currentOreList}}
                 </div>
@@ -66,6 +66,7 @@
             <div class="stats-title">Stats</div>
             <div class="stats-details">
               {{stats-output}}
+              <span id="rocketName">{{rocketName}}</span>
             </div>
           </div>
         </div>
@@ -75,3 +76,4 @@
 
   </div>
 </div>
+<script src="/js/dashboard.js"></script>
