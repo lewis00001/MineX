@@ -37,4 +37,9 @@ module.exports = function(app) {
         res.json(dbPost);
       });
   });
+  app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/'); 
+  }); 
+  
 };

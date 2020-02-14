@@ -58,5 +58,6 @@ module.exports = function(sequelize, DataTypes) {
     //   foreignKey: "CmdCntrId"
     // });
   };
+
   return User;
 };
