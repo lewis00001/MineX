@@ -8,13 +8,33 @@ module.exports = function(app) {
 
   // Load example page and pass in an example by id
   app.get("/main/:id", function(req, res) {
+    var user;
+    var ore;
     db.userInfo.findOne({ where: { id: req.params.id } }).then(function(dbGet) {
       if (dbGet === null) {
         console.log("This is null");
       } else {
-        res.render("MineX", dbGet.dataValues);
+        user = dbGet.dataValues;
+        getOreData()
       }
     });
+    function getOreData(){
+      db.minerals.findOne({ where: { id: req.params.id } }).then(function(dbGet) {
+        if (dbGet === null) {
+          console.log("This is null");
+        } else {
+          ore = dbGet.dataValues;
+          renderPage()
+        }
+      });
+    };
+    function renderPage(){
+      var renderThisObject = {
+        userData: user,
+        oreData: ore
+      };
+      res.render("MineX", renderThisObject);
+    }
   });
 
   // Render 404 page for any unmatched routes
