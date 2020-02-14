@@ -11,8 +11,8 @@ module.exports = function(app) {
     db.userInfo
       .findOne({ where: { id: req.params.id } })
       .then(function(dbExample) {
-        if(dbExample === null){
-          console.log("This is null")
+        if (dbExample === null) {
+          console.log("This is null");
         } else {
           res.render("MineX", dbExample.dataValues);
         }

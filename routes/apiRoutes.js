@@ -11,101 +11,103 @@ module.exports = function(app) {
 
   app.get("/api/find/:email/:password", function(req, res) {
     var user;
-        // Validate input
-         var requestBody = {
-           email: req.params.email,
-           password: req.params.password
-         }
-        var {error} = loginValidation(requestBody);
-        if(error) {
-          return res.json(error.details[0].message);
-        }
+    // Validate input
+    var requestBody = {
+      email: req.params.email,
+      password: req.params.password
+    };
+    var { error } = loginValidation(requestBody);
+    if (error) {
+      return res.json(error.details[0].message);
+    }
 
-      // Check for valid email
-      db.userInfo
+    // Check for valid email
+    db.userInfo
       .findOne({
         where: {
-          email: req.params.email,
+          email: req.params.email
         }
       })
       .then(function(dbPost) {
-        if(dbPost === null) {
+        if (dbPost === null) {
           return res.json("Email or Password is incorrect");
-        };
+        }
       });
 
-      db.userInfo
+    db.userInfo
       .findOne({
         where: {
-          email: req.params.email,
+          email: req.params.email
         }
       })
       .then(function(dbPost) {
-        if(dbPost !== null){
+        if (dbPost !== null) {
           user = dbPost.dataValues;
-          checkPassword()
+          checkPassword();
         }
       });
-      // Check if password is correct
-      async function checkPassword(){
-        // Hash password
-        var validPassword = await bcrypt.compare(req.params.password, user.password);
-        if(!validPassword) {
-          return res.json("Email or Password is incorrect");
-        }
-        findUser();
+    // Check if password is correct
+    async function checkPassword() {
+      // Hash password
+      var validPassword = await bcrypt.compare(
+        req.params.password,
+        user.password
+      );
+      if (!validPassword) {
+        return res.json("Email or Password is incorrect");
       }
+      findUser();
+    }
 
-      function findUser(){
-        db.userInfo
+    function findUser() {
+      db.userInfo
         .findOne({
           where: {
             email: req.params.email
           }
         })
         .then(function(dbPost) {
-          if(dbPost !== undefined || dbPost !== null) {
-            res.json(dbPost.dataValues)
-          };
+          if (dbPost !== undefined || dbPost !== null) {
+            res.json(dbPost.dataValues);
+          }
         });
-      }
+    }
   });
 
   // POST route for saving a new post
   app.post("/api/new", function(req, res) {
-
     // Validate input
-    var {error} = registerValidation(req.body);
-    if(error) {
-      return res.json(error.details[0].message)
+    var { error } = registerValidation(req.body);
+    if (error) {
+      return res.json(error.details[0].message);
       // return res.status(400).send(error.details[0].message)
-    } 
-    
+    }
+
     // Check to see if email already in use
     db.userInfo
-    .findOne({
-      where: {
-        email: req.body.email,
-      }
-    })
-    .then(function(dbPost) {
-      if(dbPost !== null) {
-        return res.json("Email already exists");
-      };
-    });
+      .findOne({
+        where: {
+          email: req.body.email
+        }
+      })
+      .then(function(dbPost) {
+        if (dbPost !== null) {
+          return res.json("Email already exists");
+        }
+      });
 
-    cryptThePassword()
+    cryptThePassword();
 
-  async function cryptThePassword(){
-    // Hash password
-    var salt = await bcrypt.genSalt(10);
-    var hashPassword = await bcrypt.hash(req.body.password, salt);
-    createUser(hashPassword);
-  }
+    async function cryptThePassword() {
+      // Hash password
+      var salt = await bcrypt.genSalt(10);
+      var hashPassword = await bcrypt.hash(req.body.password, salt);
+      createUser(hashPassword);
+    }
 
-  function createUser(secretPassword){
-        // Create new user
-        db.userInfo
+    function createUser(secretPassword) {
+      // Create new user
+      db.userInfo
         .create({
           firstName: req.body.firstName,
           lastName: req.body.lastName,
@@ -115,6 +117,6 @@ module.exports = function(app) {
         .then(function(dbPost) {
           res.json(dbPost);
         });
-  }
+    }
   });
 };
