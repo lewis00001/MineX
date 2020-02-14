@@ -67,8 +67,6 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
     funds: 0
   };
 
-  console.log(newShip);
-
   // Make sure passwords match
   if ($("#input-password").val() !== $("#input-password-confirm").val()) {
     doPasswordsMatch = false;
@@ -77,8 +75,8 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
   } else if (isSet && doPasswordsMatch) {
     $.post("/api/new", newShip).then(function(data) {
       // If we get a user id back redirect to game
-      if (data.id !== undefined) {
-        window.location.href = "/main/" + data.id;
+      if (data.user.id !== undefined) {
+        window.location.href = "/main/" + data.user.id;
       } else {
         // Report why a user was not created
         alert(data);
