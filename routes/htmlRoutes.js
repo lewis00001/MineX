@@ -8,21 +8,14 @@ module.exports = function(app) {
 
   // Load example page and pass in an example by id
   app.get("/main/:id", function(req, res) {
-    db.userInfo
-      .findOne({ where: { id: req.params.id } })
-      .then(function(dbExample) {
-        if (dbExample === null) {
-          console.log("This is null");
-        } else {
-          res.render("MineX", dbExample.dataValues);
-        }
-      });
+    db.userInfo.findOne({ where: { id: req.params.id } }).then(function(dbGet) {
+      if (dbGet === null) {
+        console.log("This is null");
+      } else {
+        res.render("MineX", dbGet.dataValues);
+      }
+    });
   });
-
-  // // Load main game page
-  // app.get("/MineX", function(req, res) {
-  //   res.render("MineX", { example: { id:3} });
-  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
