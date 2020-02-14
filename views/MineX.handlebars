@@ -18,13 +18,50 @@
         Rockets
       </div>
       <div class="rocket-options">
-        <img src="/img/rocket/s1_rocket.png" alt="rocket 1">
-        <hr>
-        <img src="/img/rocket/s2_rocket.png" alt="rocket 2" class="current-rocket">
-        <hr>
-        <img src="/img/rocket/s3_rocket.png" alt="rocket 3">
-        <hr>
-        <img src="/img/rocket/s4_rocket.png" alt="rocket 4">
+        <div class="rocket-details">
+          <div class="r-image">
+            <img src="/img/rocket/s1_rocket.png" alt="rocket 1" class="current-option">
+          </div>
+          <div class="r-data">
+            <div>Name: {{rocketName}}</div>
+            <div>Price: {{rocketPrice}}</div>
+            <div>Storage: {{storage}}</div>
+            <div class="buy-btn">Buy</div>
+          </div>
+        </div>
+        <div class="rocket-details">
+          <div class="r-image">
+            <img src="/img/rocket/s2_rocket.png" alt="rocket 2">
+          </div>
+          <div class="r-data">
+            <div>Name: {{rocketName}}</div>
+            <div>Price: {{rocketPrice}}</div> 
+            <div>Storage: {{storage}}</div>
+            <div class="buy-btn">Buy</div>
+          </div>
+        </div>
+        <div class="rocket-details">
+          <div class="r-image">
+            <img src="/img/rocket/s3_rocket.png" alt="rocket 3">
+          </div>
+          <div class="r-data">
+            <div>Name: {{rocketName}}</div>
+            <div>Price: {{rocketPrice}}</div>
+            <div>Storage: {{storage}}</div>
+            <div class="buy-btn">Buy</div>
+          </div>
+        </div>
+        <div class="rocket-details">
+          <div class="r-image">
+            <img src="/img/rocket/s4_rocket.png" alt="rocket 4">
+          </div>
+          <div class="r-data">
+            <div>Name: {{rocketName}}</div>
+            <div>Price: {{rocketPrice}}</div>
+            <div>Storage: {{storage}}</div>
+            <div class="buy-btn">Buy</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -34,7 +71,7 @@
       </div>
 
       <div class="asteroids">
-        <img src="/img/asteroid/asteroid_1.png" alt="asteroid 1">
+        <img src="/img/asteroid/asteroid_1.png" alt="asteroid 1" class="current-option">
         <img src="/img/asteroid/asteroid_2.png" alt="asteroid 2">
         <img src="/img/asteroid/asteroid_3.png" alt="asteroid 3">
         <img src="/img/asteroid/asteroid_4.png" alt="asteroid 4">
@@ -53,22 +90,27 @@
                 </div>
               </div>
               <div class="actions r-corner">
-                <div class="sell-ore r-corner">Sell Ores</div>
-                <div class="buy-ship r-corner">Buy Ship</div>
+                <div class="mine-a r-corner">Mine Asteroid</div>
+                <div class="sell-ores r-corner">Sell Ores</div>
+                <div class="dots">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
               </div>
             </div>
           </div>
-
         </div>
 
-        <div class="stats">
+        {{!-- to add later if we have time --}}
+        {{!-- <div class="stats">
           <div class="stats-center">
             <div class="stats-title">Stats</div>
             <div class="stats-details">
               {{stats-output}}
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
 
     </div>
