@@ -227,6 +227,15 @@
     font-weight: 700;
 }
 
+.ore-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.ore-list ul {
+    list-style-type: none;
+}
+
 .ores {
     height: 265px;
     overflow: auto;
