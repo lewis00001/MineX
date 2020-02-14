@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "Thomaskorolog1",
     "database": "mineX",
     "host": "localhost",
     "dialect": "mysql"
