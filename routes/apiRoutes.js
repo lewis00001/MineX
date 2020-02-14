@@ -112,7 +112,9 @@ module.exports = function(app) {
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           password: secretPassword,
-          email: req.body.email
+          email: req.body.email,
+          rocketName: req.body.rocketName,
+          funds: req.body.funds
         })
         .then(function(dbPost) {
           res.json(dbPost);

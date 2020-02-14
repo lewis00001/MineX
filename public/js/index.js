@@ -62,8 +62,12 @@ document.querySelector("#new-submit").addEventListener("click", function(e) {
     firstName: $("#input-first-name").val(),
     lastName: $("#input-last-name").val(),
     password: $("#input-password").val(),
-    email: $("#input-email").val()
+    email: $("#input-email").val(),
+    rocketName: "rocket_1",
+    funds: 0
   };
+
+  console.log(newShip);
 
   // Make sure passwords match
   if ($("#input-password").val() !== $("#input-password-confirm").val()) {

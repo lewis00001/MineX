@@ -15,6 +15,12 @@ var registerValidation = function(data) {
       .email(),
     password: Joi.string()
       .min(6)
+      .required(),
+    rocketName: Joi.string()
+      .min(2)
+      .required(),
+    funds: Joi.number()
+      .min(0)
       .required()
   });
   // Lets valid the data before a user

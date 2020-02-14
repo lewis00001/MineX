@@ -18,6 +18,12 @@ module.exports = function(sequelize, Sequelize) {
       },
       email: {
         type: Sequelize.STRING
+      },
+      rocketName: {
+        type: Sequelize.STRING
+      },
+      funds: {
+        type: Sequelize.INTEGER
       }
     },
     {
