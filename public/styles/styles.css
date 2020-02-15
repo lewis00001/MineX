@@ -278,9 +278,26 @@
     padding: 5px;
 }
 
-.dot {
+.dot1 {
     height: 40px;
     width: 40px;
-    background-color: #444;
     border-radius: 50%;
+    background: linear-gradient(90deg, #19bca0,#ffe76f);
+    filter: blur(1.5px);
 }
+.dot2 {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: linear-gradient(90deg,#fae88c,#ffe76f, #ffd503,#ffe76f, #fae88c);
+    filter: blur(1.5px);
+}
+.dot3 {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #ffe76f, #aa5bd6);
+    filter: blur(1.5px);
+}
+
+
