@@ -1,6 +1,6 @@
-calcPercents(1,4);
+calcPercents(4,4);
 
-function calcPercents(currentAsteroid) {
+function calcPercents(currentAsteroid, storage) {
 
     let ores = [
         ["Uranium", "Neodymium", "Praseodymium", "Galium"],
@@ -35,46 +35,56 @@ function calcPercents(currentAsteroid) {
     if (currentAsteroid < 4) {
         minedOres = [{
                 ore: ores[currentAsteroid - 1][0],
-                percent: percentArray[0]
+                percent: percentArray[0],
+                kilos: percentArray[0] * storage
             },
             {
                 ore: ores[currentAsteroid - 1][1],
-                percent: percentArray[1]
+                percent: percentArray[1],
+                kilos: percentArray[1] * storage
             },
             {
                 ore: ores[currentAsteroid - 1][2],
-                percent: percentArray[2]
+                percent: percentArray[2],
+                kilos: percentArray[2] * storage
             },
             {
                 ore: ores[currentAsteroid - 1][3],
-                percent: percentArray[3]
+                percent: percentArray[3],
+                kilos: percentArray[3] * storage
             },
             {
                 ore: ores[currentAsteroid][Math.floor(Math.random() * 3)],
-                percent: percentArray[4]
+                percent: percentArray[4],
+                kilos: percentArray[4] * storage
             }
         ];
     } else {
         // assign ores to percentages for last asteroid
         minedOres = [{
                 ore: ores[currentAsteroid - 2][Math.floor(Math.random() * 3)],
-                percent: percentArray[0]
+                percent: percentArray[0],
+                kilos: percentArray[0] * storage
             },
             {
                 ore: ores[currentAsteroid - 1][0],
-                percent: percentArray[1]
+                percent: percentArray[1],
+                kilos: percentArray[1] * storage
             },
             {
                 ore: ores[currentAsteroid - 1][1],
-                percent: percentArray[2]
+                percent: percentArray[2],
+                kilos: percentArray[2] * storage
             },
             {
                 ore: ores[currentAsteroid - 1][2],
-                percent: percentArray[3]
+                percent: percentArray[3],
+                kilos: percentArray[3] * storage
             },
             {
                 ore: ores[currentAsteroid - 1][3],
-                percent: percentArray[4]
+                percent: percentArray[4],
+                kilos: percentArray[4] * storage
             },
         ];
     }

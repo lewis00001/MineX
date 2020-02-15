@@ -44,6 +44,10 @@
     height: 60px;
 }
 
+.btn-gp-signout:hover {
+    background-color: #3E3A71;
+}
+
 .pg-welcome {
     font-size: 2em;
     text-align: center;
@@ -92,7 +96,7 @@
     background-color: #444;
     padding: 8px 0 8px 8px;
     min-height: 520px;
-    width: 120px;
+    width: 300px;
 }
 
 .rocket-title {
@@ -111,11 +115,11 @@
     padding: 10px 0 10px 0;
 }
 
-.current-rocket {
-    border-bottom: 4px solid #222;
+.current-option {
+    border-bottom: 4px solid #FFDA1F;
 }
 
-.rocket-options > img {
+.r-image > img {
     width: 60px;
     padding-bottom: 2px;
 }
@@ -144,14 +148,14 @@
     background-color: #666;
     padding: 8px;
     margin: 10px 0 0 0;
-    height: 310px;
+    height: 370px;
     display: flex;
     justify-content: space-around;
     border: 1px solid #333;
 }
 
 .inner-dashboard {
-    width: 74%;
+    width: 100%;
     background-color: #444;
     display: flex;
 }
@@ -176,28 +180,34 @@
 }
 
 .f-box {
-    height: 260px;
+    height: 320px;
 }
 
-.funding,
 .actions {
     float: left;
     background-color: #666;
     margin: 5px;
-    width: 50%;
+    width: 35%;
+}
+
+.funding {
+    float: left;
+    background-color: #666;
+    margin: 5px;
+    width: 65%;
 }
 
 .current-funds,
 .ores,
-.sell-ore,
-.buy-ship {
+.sell-ores,
+.mine-a {
     background-color: #444;
     padding: 5px;
     margin: 5px;
 }
 
-.sell-ore,
-.buy-ship {
+.sell-ores,
+.mine-a {
     text-align: center;
     font-size: 18px;
     height: 113px;
@@ -205,11 +215,80 @@
     padding: 40px 0 0 0;
 }
 
+.mine-a:hover {
+    background-color: #19BCA0;
+    color: #222;
+    font-weight: 700;
+}
+
+.sell-ores:hover {
+    background-color: #19BCA0;
+    color: #222;
+    font-weight: 700;
+}
+
 .ores {
-    height: 205px;
+    height: 265px;
     overflow: auto;
 }
 
 .r-corner {
     border-radius: 8px;
 }
+
+.rocket-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.r-image {
+    display: flex;
+}
+
+.r-data {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.buy-btn {
+    margin-top: 3px;
+    padding: 4px;
+    text-align: center;
+    background-color: #444;
+}
+
+.buy-btn:hover {
+    background-color: #3E3A71;;
+}
+
+.dots {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.dot1 {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #19bca0,#ffe76f);
+    filter: blur(1.5px);
+}
+.dot2 {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: linear-gradient(90deg,#fae88c,#ffe76f, #ffd503,#ffe76f, #fae88c);
+    filter: blur(1.5px);
+}
+.dot3 {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #ffe76f, #aa5bd6);
+    filter: blur(1.5px);
+}
+
+
