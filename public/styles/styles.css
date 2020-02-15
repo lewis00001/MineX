@@ -274,14 +274,14 @@
     background-color: #3E3A71;;
 }
 
-ul {
+._ul {
     display: flex;
     justify-content: space-around;
     padding: 5px;
 
 }
 
-ul li {
+._ul li {
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -291,7 +291,7 @@ ul li {
     transition: .5s;
 }
 
-li:hover {
+._ul li:hover {
     background: #ffe76f;
     box-shadow: 0 0 10px rgba(255, 255, 255, 1),
                 0 0 20px rgba(255, 255, 255, 1),
