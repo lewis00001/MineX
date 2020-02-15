@@ -1,5 +1,3 @@
-calcPercents(4,4);
-
 function calcPercents(currentAsteroid, storage) {
 
     let ores = [
