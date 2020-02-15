@@ -1,6 +1,7 @@
 {
   "development": {
     "username": "root",
+
     "password": "Aiglue2019",
     "database": "mineX",
     "host": "localhost",
