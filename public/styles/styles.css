@@ -44,6 +44,10 @@
     height: 60px;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .btn-gp-signout:hover {
     background-color: #3E3A71;
 }
