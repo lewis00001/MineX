@@ -3,7 +3,7 @@
   <div class="gp-header">
     <img src="/img/logo.png" class="gp-logo" alt="Logo">
     <div class="pg-welcome">
-      Welcome to your command center.<br>
+      Welcome to your command center. {{userData.firstName}} {{userData.lastName}}<br>
       We're standing by for orders.
     </div>
     <div class="btn-gp-signout r-corner">Sign Out</div>
@@ -12,53 +12,51 @@
   <div class="h-line"></div>
 
   <div class="dashboard">
-
     <div class="rockets">
       <div class="rocket-title">
         Rockets
       </div>
       <div class="rocket-options">
+        <span id="rocketName" class="d-none">{{userData.rocketName}}</span>
         <div class="rocket-details">
           <div class="r-image">
-            <img src="/img/rocket/s1_rocket.png" alt="rocket 1" class="current-option">
+            <img src="/img/rocket/s1_rocket.png" alt="rocket 1" id="rocket_1" class="rocket">
           </div>
           <div class="r-data">
-            <div>Name: {{rocketName}}</div>
-            <div>Price: {{rocketPrice}}</div>
-            <div>Storage: {{storage}}</div>
+            <div>Name: Moon Dart</div>
+            <div>Storage: 4</div>
+          </div>
+        </div>
+        <div class="rocket-details">
+          <div class="r-image">
+            <img src="/img/rocket/s2_rocket.png" alt="rocket 2" id="rocket_2" class="current-option rocket">
+          </div>
+          <div class="r-data">
+            <div>Name: Galactice Spike</div>
+            <div>Price: $8000</div> 
+            <div>Storage: 8</div>
             <div class="buy-btn">Buy</div>
           </div>
         </div>
         <div class="rocket-details">
           <div class="r-image">
-            <img src="/img/rocket/s2_rocket.png" alt="rocket 2">
+            <img src="/img/rocket/s3_rocket.png" alt="rocket 3" id="rocket_3" class="rocket">
           </div>
           <div class="r-data">
-            <div>Name: {{rocketName}}</div>
-            <div>Price: {{rocketPrice}}</div> 
-            <div>Storage: {{storage}}</div>
+            <div>Name: Light Bender</div>
+            <div>Price: $20,000</div>
+            <div>Storage: 12</div>
             <div class="buy-btn">Buy</div>
           </div>
         </div>
         <div class="rocket-details">
           <div class="r-image">
-            <img src="/img/rocket/s3_rocket.png" alt="rocket 3">
+            <img src="/img/rocket/s4_rocket.png" alt="rocket 4" id="rocket_4" class="rocket">
           </div>
           <div class="r-data">
-            <div>Name: {{rocketName}}</div>
-            <div>Price: {{rocketPrice}}</div>
-            <div>Storage: {{storage}}</div>
-            <div class="buy-btn">Buy</div>
-          </div>
-        </div>
-        <div class="rocket-details">
-          <div class="r-image">
-            <img src="/img/rocket/s4_rocket.png" alt="rocket 4">
-          </div>
-          <div class="r-data">
-            <div>Name: {{rocketName}}</div>
-            <div>Price: {{rocketPrice}}</div>
-            <div>Storage: {{storage}}</div>
+            <div>Name: Star Hammer</div>
+            <div>Price: $150,000</div>
+            <div>Storage: 16</div>
             <div class="buy-btn">Buy</div>
           </div>
         </div>
@@ -84,9 +82,30 @@
             <div class="cmd-title">Command Center</div>
             <div class="f-box flex">
               <div class="funding">
-                <div class="current-funds r-corner">Current Funds: ${{currentFunds}}</div>
+                <div class="current-funds r-corner">Current Funds: ${{userData.funds}}</div>
                 <div class="ores">Current Ore List: <br>
-                  {{currentOreList}}
+                  <div class="ore-list">
+                    <ul>
+                    <li class="ore">Uranium: <span id="uranium-count">{{oreData.uranium}}</span></li>
+                    <li class="ore">Neodymium: <span id="neodymium-count">{{oreData.neodymium}}</span></li>
+                    <li class="ore">Praseodymium: <span id="praseodymium-count">{{oreData.praseodymium}}</span></li>
+                    <li class="ore">Galium: <span id="galium-count">{{oreData.galium}}</span></li>
+                    <li class="ore">Idium: <span id="idium-count">{{oreData.idium}}</span></li>
+                    <li class="ore">Terbium: <span id="terbium-count">{{oreData.terbium}}</span></li>
+                    <li class="ore">Silver: <span id="silver-count">{{oreData.silver}}</span></li>
+                    <li class="ore">Hafnium: <span id="hafnium-count">{{oreData.hafnium}}</span></li>
+                  </ul>
+                  <ul>
+                    <li class="ore">Rhenium: <span id="rhenium-count">{{oreData.rhenium}}</span></li>
+                    <li class="ore">Germanium: <span id="germanium-count">{{oreData.germanium}}</span></li>
+                    <li class="ore">Gold: <span id="gold-count">{{oreData.gold}}</span></li>
+                    <li class="ore">Platinum: <span id="platinum-count">{{oreData.platinum}}</span></li>
+                    <li class="ore">Palladium: <span id="palladium-count">{{oreData.palladium}}</span></li>
+                    <li class="ore">Rhodium: <span id="rhodium-count">{{oreData.rhodium}}</span></li>
+                    <li class="ore">Diamond: <span id="diamond-count">{{oreData.diamond}}</span></li>
+                    <li class="ore">Blue Diamond: <span id="blueDiamond-count">{{oreData.blueDiamond}}</span></li>
+                  </ul>
+                  </div>
                 </div>
               </div>
               <div class="actions r-corner">
@@ -108,6 +127,7 @@
             <div class="stats-title">Stats</div>
             <div class="stats-details">
               {{stats-output}}
+              <span id="rocketName">{{rocketName}}</span>
             </div>
           </div>
         </div> --}}
@@ -117,3 +137,4 @@
 
   </div>
 </div>
+<script src="/js/dashboard.js"></script>

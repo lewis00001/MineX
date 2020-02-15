@@ -9,6 +9,12 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/all/ore", function(req, res) {
+    db.minerals.findAll({}).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
   app.get("/api/find/:email/:password", function(req, res) {
     var user;
     // Validate input
@@ -106,17 +112,55 @@ module.exports = function(app) {
     }
 
     function createUser(secretPassword) {
+      var user;
+      var ore;
       // Create new user
       db.userInfo
         .create({
           firstName: req.body.firstName,
           lastName: req.body.lastName,
           password: secretPassword,
-          email: req.body.email
+          email: req.body.email,
+          rocketName: req.body.rocketName,
+          funds: req.body.funds
         })
         .then(function(dbPost) {
-          res.json(dbPost);
+        user = dbPost;
+        createMinerals();
         });
+        function createMinerals(){
+          db.minerals
+          .create({
+            uranium: 0,
+            neodymium: 0,
+            praseodymium: 0,
+            galium: 0,
+            idium: 0,
+            terbium: 0,
+            silver: 0,
+            hafnium: 0,
+            rhenium: 0,
+            germanium: 0,
+            gold: 0,
+            platinum: 0,
+            palladium: 0,
+            rhodium: 0,
+            diamond: 0,
+            blueDiamond: 0
+          })
+          .then(function(dbPost) {
+            ore = dbPost;
+            sendItBack(user, ore);
+          });
+        }
+    }
+
+    function sendItBack(userData, oreData){
+      var sendThis = {
+        user: userData.dataValues,
+        ore: oreData.dataValues
+      }
+      res.json(sendThis);
     }
   });
   app.get('/logout', function(req, res){
