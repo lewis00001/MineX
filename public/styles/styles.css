@@ -272,32 +272,31 @@
     background-color: #3E3A71;;
 }
 
-.dots {
+ul {
     display: flex;
     justify-content: space-around;
     padding: 5px;
+
 }
 
-.dot1 {
+ul li {
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background: linear-gradient(90deg, #19bca0,#ffe76f);
-    filter: blur(1.5px);
-}
-.dot2 {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    background: linear-gradient(90deg,#fae88c,#ffe76f, #ffd503,#ffe76f, #fae88c);
-    filter: blur(1.5px);
-}
-.dot3 {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    background: linear-gradient(90deg, #ffe76f, #aa5bd6);
-    filter: blur(1.5px);
+    list-style: none;
+    background: #f3efda;
+    color: #000635;
+    transition: .5s;
 }
 
-
+li:hover {
+    background: #ffe76f;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1),
+                0 0 20px rgba(255, 255, 255, 1),
+                0 0 30px rgba(255, 255, 255, 1),
+                0 0 0 75px rgba(255, 255, 255, 0.05),
+                0 0 0 60px rgba(255, 255, 255, 0.05),
+                0 0 0 45px rgba(255, 255, 255, 0.05),
+                0 0 0 30px rgba(255, 255, 255, 0.05),
+                0 0 0 15px rgba(255, 255, 255, 0.05);
+}
