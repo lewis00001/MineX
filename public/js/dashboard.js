@@ -1,6 +1,6 @@
 var rockets = document.querySelectorAll(".rocket");
 var currentRocket = document.querySelector("#rocketName").textContent;
-console.log(currentRocket);
+console.log("Current rocket: " + currentRocket);
 
 for (var i = 0; i < rockets.length; i++) {
   // element.classList.contains(class);

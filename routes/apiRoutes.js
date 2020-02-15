@@ -10,6 +10,20 @@ module.exports = function(app) {
   });
 
   app.get("/api/all/ore", function(req, res) {
+    db.userMinerals.findAll({}).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
+  // returns rocket data
+  app.get("/api/all/rockets", function(req, res) {
+    db.rocket.findAll({}).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
+  // returns mineral data
+  app.get("/api/all/minerals", function(req, res) {
     db.minerals.findAll({}).then(function(dbPost) {
       res.json(dbPost);
     });
@@ -129,7 +143,7 @@ module.exports = function(app) {
         createMinerals();
         });
         function createMinerals(){
-          db.minerals
+          db.userMinerals
           .create({
             uranium: 0,
             neodymium: 0,

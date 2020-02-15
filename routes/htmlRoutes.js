@@ -19,7 +19,7 @@ module.exports = function(app) {
       }
     });
     function getOreData(){
-      db.minerals.findOne({ where: { id: req.params.id } }).then(function(dbGet) {
+      db.userMinerals.findOne({ where: { id: req.params.id } }).then(function(dbGet) {
         if (dbGet === null) {
           console.log("This is null");
         } else {
