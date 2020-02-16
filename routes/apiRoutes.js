@@ -177,11 +177,4 @@ module.exports = function(app) {
       res.json(sendThis);
     }
   });
-  
-  setTimeout(function () {
-    app.get('/logout', function(req, res){
-      req.logout();
-      res.redirect('/'); 
-    }); 
-  });
 };

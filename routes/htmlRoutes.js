@@ -48,17 +48,14 @@ module.exports = function (app) {
     }
   });
 
+  // logout hack
+  app.get("/logout", function(req, res) {
+    //req.logout();
+    res.render("index");
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");
   });
 };
-
-// logout
-// app.get('/logout', function (req, res) {
-//   if (req.isAuthenticated()) {
-//     req.logout();
-//     return res.redirect('/');
-//   }
-//   return res.status(401)
-// });
