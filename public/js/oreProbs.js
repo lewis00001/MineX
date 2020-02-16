@@ -86,8 +86,5 @@ function calcPercents(currentAsteroid, storage) {
             },
         ];
     }
-
-    console.log(minedOres);
-
     return minedOres;
 }
