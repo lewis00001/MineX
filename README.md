@@ -60,23 +60,19 @@ To get started you will need these applications:
 * **Joi** : schema description language and data validator for JS
 
 ## <a name="features"> Game Features </a>
-### **Home Page**
-Instructions and create/login account.
+### **Home Page** Instructions and create/login account.
 
 ![Home](./public/img/home.png)
 
-### **Sign-Up Page**
-Create an encrypted account which will be stored in our database.
+### **Sign-Up Page** Create an encrypted account which will be stored in our database.
 
 ![Register](./public/img/register.png)
 
-### **Log-In Page**
-Logging-in page
+### **Log-In Page** - Log into game console
 
 ![Login](./public/img/login.png)
 
-### **Command Center Page**
-Command center page of user's account and current status.  
+### **Command Center Page** Command center page of user's account and current status.  
 
 ![Command Center](./public/img/cmdcntr.png)
 
