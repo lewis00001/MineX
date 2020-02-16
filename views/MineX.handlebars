@@ -111,7 +111,7 @@
                 </div>
               </div>
               <div class="actions r-corner">
-                <div class="mine-a r-corner pointer">Mine Asteroid</div>
+                <div class="mine-a r-corner pointer" id="mineBtn">Mine Asteroid</div>
                 <div class="sell-ores r-corner pointer">Sell Ores</div>
                 <ul class="_ul">
                   <li></li>
@@ -119,6 +119,25 @@
                   <li></li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="ore-modal" class="ore-modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>The ore mining trip returned the following minerals:</h3>
+            <br>
+            <div class="heading">
+              <div class="h-data">Ore</div>
+              <div class="h-data">Percent</div>
+              <div class="h-data">Kilos</div>
+              <div class="h-data">Price/Kilo</div>
+              <div class="h-data">Total Value</div>
+            </div>
+            <div id="m-data-output">
+              <div class="output"></div>
             </div>
           </div>
         </div>
@@ -145,6 +164,7 @@
 
   let curAsteroid, curRocket, rStorage;
   let oresMined;
+  let oresMinedVals = [];
 
   // get current asteroid value
   var _asteroid = document.querySelectorAll(".asteroid");
@@ -164,8 +184,44 @@
     rStorage = rockets[curRocket - 1].storage;
     // gets mining results
     oresMined = calcPercents(curAsteroid, rStorage);
-    console.log(oresMined);
+    addOreValues();
   });
+
+  function addOreValues() {
+    // empty oresMined
+    oresMinedVals = [];
+    console.log(oresMined);
+    for (let i = 0; i < oresMined.length; i++) {
+      for (let j = 0; j < minerals.length; j++) {
+        if (oresMined[i].ore === minerals[j].mineral_name && oresMined[i].percent != 0) {
+          let addOreWithPrice = {
+            ore: oresMined[i].ore,
+            percent: oresMined[i].percent,
+            kilos: oresMined[i].kilos,
+            pricePerKilo: minerals[j].price,
+            totalValue: oresMined[i].kilos * minerals[j].price
+          }
+          oresMinedVals.push(addOreWithPrice);
+        }
+      }
+    }
+    console.log(oresMinedVals);
+    displayModalData();
+  }
+
+  function displayModalData() {
+    document.getElementById("m-data-output").innerHTML = "";
+    for (let i = 0; i < oresMinedVals.length; i++) {
+    document.getElementById("m-data-output").innerHTML +=
+      "<div class='data-output'>" +
+      "<div class='data'>" + oresMinedVals[i].ore + "</div>" +
+      "<div class='data'>" + oresMinedVals[i].percent + "</div>" +
+      "<div class='data'>" + oresMinedVals[i].kilos + "</div>" +
+      "<div class='data'>" + oresMinedVals[i].pricePerKilo + "</div>" +
+      "<div class='data'>" + oresMinedVals[i].totalValue + "</div>" +
+      "</div>";
+    }
+  }
 
   // sell ores
   document.querySelector(".sell-ores").addEventListener("click", function (e) {
