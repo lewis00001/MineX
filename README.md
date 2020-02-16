@@ -60,25 +60,27 @@ To get started you will need these applications:
 * **Joi** : schema description language and data validator for JS
 
 ## <a name="features"> Game Features </a>
-### **Home Page**
-Instructions and create/login account.
+### **Home Page** Instructions and create/login account.
 
 ![Home](./public/img/home.png)
 
-Create an encrypted account which will be stored in our database.
+### **Sign-Up Page** Create an encrypted account which will be stored in our database.
 
 ![Register](./public/img/register.png)
 
-Logging-in page
+### **Log-In Page** - Log into game console
 
 ![Login](./public/img/login.png)
 
-Command center page of user's account and current status.  
+### **Command Center Page** Command center page of user's account and current status.  
 
 ![Command Center](./public/img/cmdcntr.png)
 
 ## <a name="improvements"> Improvements </a>
-* Create a spaceship (register) or use an existing spaceship (login) to enter the command center.
+* Work-in-progress for MineX v:2.0
+* Implement Passport.js
+* Implement Json Web Tokens & introduce cookies
+* Refine game dashboard
 
 ## <a name="contributors"> Contributors: </a><br />
 * Dallin Rodgers - https://github.com/???
