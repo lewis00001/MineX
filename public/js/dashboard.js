@@ -71,3 +71,14 @@ setTimeout(function () {
     console.log(minerals);
   })
 }, 1500);
+
+
+
+// document.querySelector("#logout").addEventListener("click", function(e) {
+//   e.preventDefault();
+
+//   $.get('/logout', function(req, res){
+//     req.logout();
+//     res.redirect('/main/'); 
+//   }); 
+// });
