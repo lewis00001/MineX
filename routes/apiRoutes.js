@@ -177,6 +177,7 @@ module.exports = function(app) {
       res.json(sendThis);
     }
   });
+  
   app.get('/logout', function(req, res){
     req.logout();
     res.redirect('/'); 

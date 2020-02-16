@@ -6,7 +6,7 @@
       Welcome to your command center. {{userData.firstName}} {{userData.lastName}}<br>
       We're standing by for orders.
     </div>
-    <div class="btn-gp-signout r-corner pointer">Sign Out</div>
+    <div class="btn-gp-signout r-corner pointer" href="/logout">Sign Out</div>
   </div>
   {{!-- head/body divider line --}}
   <div class="h-line"></div>
@@ -23,20 +23,20 @@
             <img src="/img/rocket/s1_rocket.png" alt="rocket 1" id="rocket_1" class="rocket">
           </div>
           <div class="r-data">
-            <div>Moon Dart</div>
-            <div>Price: $2000</div>
-            <div>Storage: 4</div>
+            <div id="r1-name"></div>
+            <div id="r1-price"></div>
+            <div id="r1-storage"></div>
             <div class="buy-btn pointer">Buy</div>
           </div>
         </div>
         <div class="rocket-details">
           <div class="r-image">
-            <img src="/img/rocket/s2_rocket.png" alt="rocket 2" id="rocket_2" class="current-option rocket">
+            <img src="/img/rocket/s2_rocket.png" alt="rocket 2" id="rocket_2" class="rocket">
           </div>
           <div class="r-data">
-            <div>Galactice Spike</div>
-            <div>Price: $8000</div>
-            <div>Storage: 8</div>
+            <div id="r2-name"></div>
+            <div id="r2-price"></div>
+            <div id="r2-storage"></div>
             <div class="buy-btn pointer">Buy</div>
           </div>
         </div>
@@ -45,9 +45,9 @@
             <img src="/img/rocket/s3_rocket.png" alt="rocket 3" id="rocket_3" class="rocket">
           </div>
           <div class="r-data">
-            <div>Light Bender</div>
-            <div>Price: $20,000</div>
-            <div>Storage: 12</div>
+            <div id="r3-name"></div>
+            <div id="r3-price"></div>
+            <div id="r3-storage"></div>
             <div class="buy-btn pointer">Buy</div>
           </div>
         </div>
@@ -56,9 +56,9 @@
             <img src="/img/rocket/s4_rocket.png" alt="rocket 4" id="rocket_4" class="rocket">
           </div>
           <div class="r-data">
-            <div>Star Hammer</div>
-            <div>Price: $150,000</div>
-            <div>Storage: 16</div>
+            <div id="r4-name"></div>
+            <div id="r4-price"></div>
+            <div id="r4-storage"></div>
             <div class="buy-btn pointer">Buy</div>
           </div>
         </div>
@@ -71,10 +71,10 @@
       </div>
 
       <div class="asteroids">
-        <img src="/img/asteroid/asteroid_1.png" alt="asteroid 1" class="current-option">
-        <img src="/img/asteroid/asteroid_2.png" alt="asteroid 2">
-        <img src="/img/asteroid/asteroid_3.png" alt="asteroid 3">
-        <img src="/img/asteroid/asteroid_4.png" alt="asteroid 4">
+        <img src="/img/asteroid/asteroid_1.png" alt="asteroid 1" id="asteroid_1" class="asteroid" value="1">
+        <img src="/img/asteroid/asteroid_2.png" alt="asteroid 2" id="asteroid_2" class="asteroid" value="2">
+        <img src="/img/asteroid/asteroid_3.png" alt="asteroid 3" id="asteroid_3" class="asteroid" value="3">
+        <img src="/img/asteroid/asteroid_4.png" alt="asteroid 4" id="asteroid_4" class="asteroid" value="4">
       </div>
 
       <div class="inner">
@@ -140,3 +140,36 @@
   </div>
 </div>
 <script src="/js/dashboard.js"></script>
+<script src="/js/oreProbs.js"></script>
+<script>
+
+  let curAsteroid, curRocket, rStorage;
+  let oresMined;
+
+  // get current asteroid value
+  var _asteroid = document.querySelectorAll(".asteroid");
+  for (let i = 0; i < _asteroid.length; i++) {
+    if (_asteroid[i].classList.contains("current-option")) {
+      // get val of current asteroid
+      let currentVal = parseInt(_asteroid[i].getAttribute('value'));
+      curAsteroid = currentVal;
+      curRocket = currentVal;
+    }
+  }
+
+  // mine ores
+  document.querySelector(".mine-a").addEventListener("click", function (event) {
+    event.preventDefault();
+    // gets updated rocket data
+    rStorage = rockets[curRocket - 1].storage;
+    // gets mining results
+    oresMined = calcPercents(curAsteroid, rStorage);
+    console.log(oresMined);
+  });
+
+  // sell ores
+  document.querySelector(".sell-ores").addEventListener("click", function (e) {
+    e.preventDefault();
+    console.log("connected");
+  });
+</script>

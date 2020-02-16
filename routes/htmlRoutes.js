@@ -1,34 +1,45 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
+  app.get("/", function (req, res) {
     res.render("index");
   });
 
   // Load example page and pass in an example by id
-  app.get("/main/:id", function(req, res) {
+  app.get("/main/:id", function (req, res) {
     var user;
     var ore;
-    db.userInfo.findOne({ where: { id: req.params.id } }).then(function(dbGet) {
+
+    db.userInfo.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbGet) {
       if (dbGet === null) {
         console.log("This is null");
       } else {
         user = dbGet.dataValues;
-        getOreData()
+        getOreData();
       }
     });
-    function getOreData(){
-      db.userMinerals.findOne({ where: { id: req.params.id } }).then(function(dbGet) {
+
+    function getOreData() {
+      db.userMinerals.findOne({
+        where: {
+          id: req.params.id
+        }
+      }).then(function (dbGet) {
         if (dbGet === null) {
           console.log("This is null");
         } else {
           ore = dbGet.dataValues;
-          renderPage()
+          renderPage();
         }
       });
     };
-    function renderPage(){
+
+    function renderPage() {
       var renderThisObject = {
         userData: user,
         oreData: ore
@@ -38,7 +49,16 @@ module.exports = function(app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };
+
+// logout
+// app.get('/logout', function (req, res) {
+//   if (req.isAuthenticated()) {
+//     req.logout();
+//     return res.redirect('/');
+//   }
+//   return res.status(401)
+// });
