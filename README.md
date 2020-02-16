@@ -19,7 +19,7 @@ https://dallin-rodgers-minex.herokuapp.com/
 * If playing for the first time, you will be provided with a basic spaceship capable of taking you to the nearest asteroid.
 * Once on the asteroid, you will gather random precious ores to fill your cargo for the return trip.
 * After selling the materials, your account will cummulate to enable you to make upgrades to your spaceship.
-* After you upgrade to the next improved vessel, you can travel to further asteroids to gather even more valuable ores.
+* After upgrading to the next improved vessel, you can travel to further asteroids and gather even more valuable ores to enhance your wealth.
 
 ## <a name="instructions"> Instructions </a>
 To get started you will need these applications:
@@ -60,19 +60,19 @@ To get started you will need these applications:
 * **Joi** : schema description language and data validator for JS
 
 ## <a name="features"> Game Features </a>
-### **Home Page** Instructions and create/login account.
+**Home Page** Instructions and create/login account.
 
 ![Home](./public/img/home.png)
 
-### **Sign-Up Page** Create an encrypted account which will be stored in our database.
+**Sign-Up Page** Create an encrypted account which will be stored in our database.
 
 ![Register](./public/img/register.png)
 
-### **Log-In Page** - Log into game console
+**Log-In Page** - Log into game console
 
 ![Login](./public/img/login.png)
 
-### **Command Center Page** Command center page of user's account and current status.  
+**Command Center Page** Command center page of user's account and current status.  
 
 ![Command Center](./public/img/cmdcntr.png)
 
