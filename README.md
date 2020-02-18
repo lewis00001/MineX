@@ -85,7 +85,7 @@ To get started you will need these applications:
 ## <a name="contributors"> Contributors: </a><br />
 * Dallin Rodgers - https://github.com/???
 * Lewis Lockhart - https://github.com/lewis00001
-* Korene Korologos - https://github.com/
+* Korene Korologos - https://github.com/korenekorologos
 * James Goh - https://github.com/jgohbb
 
 
